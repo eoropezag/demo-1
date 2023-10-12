@@ -1,10 +1,13 @@
 package com.example.demo.entities;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,7 +17,7 @@ public class Productos {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "idProducto")
-    private long idProducto;
+    private Long idProducto;
 
     @Column(name = "clave")
     private String clave;
@@ -24,12 +27,15 @@ public class Productos {
     
     @Column(name = "activo")
     private boolean activo;
+    
+    @OneToMany(mappedBy="listaCompra")
+    private Set<ListaCompraDetalle> listasCompraDetalle;
 
-	public long getIdProducto() {
+	public Long getIdProducto() {
 		return idProducto;
 	}
 
-	public void setIdProducto(long idProducto) {
+	public void setIdProducto(Long idProducto) {
 		this.idProducto = idProducto;
 	}
 
@@ -56,7 +62,13 @@ public class Productos {
 	public void setActivo(boolean activo) {
 		this.activo = activo;
 	}
-    
-    
+
+	public Set<ListaCompraDetalle> getListasCompraDetalle() {
+		return listasCompraDetalle;
+	}
+
+	public void setListasCompraDetalle(Set<ListaCompraDetalle> listasCompraDetalle) {
+		this.listasCompraDetalle = listasCompraDetalle;
+	}
 
 }

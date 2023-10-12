@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import java.util.Date;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,11 +20,11 @@ public class ListaCompra {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "idLista")
-    private long idLista;
+    private Long idLista;
 	
 	@ManyToOne
     @JoinColumn(name="idCliente", nullable=false)
-	 private long idCliente;
+	 private Long idCliente;
 
     @Column(name = "nombre")
     private String nombre;
@@ -35,20 +37,23 @@ public class ListaCompra {
 
     @Column(name = "activo")
     private boolean activo;
+    
+    @OneToMany(mappedBy="listaCompra")
+    private Set<ListaCompraDetalle> listasCompraDetalle;
 
-	public long getIdLista() {
+	public Long getIdLista() {
 		return idLista;
 	}
 
-	public void setIdLista(long idLista) {
+	public void setIdLista(Long idLista) {
 		this.idLista = idLista;
 	}
 
-	public long getIdCliente() {
+	public Long getIdCliente() {
 		return idCliente;
 	}
 
-	public void setIdCliente(long idCliente) {
+	public void setIdCliente(Long idCliente) {
 		this.idCliente = idCliente;
 	}
 
@@ -83,6 +88,13 @@ public class ListaCompra {
 	public void setActivo(boolean activo) {
 		this.activo = activo;
 	}
-    
+
+	public Set<ListaCompraDetalle> getListasCompraDetalle() {
+		return listasCompraDetalle;
+	}
+
+	public void setListasCompraDetalle(Set<ListaCompraDetalle> listasCompraDetalle) {
+		this.listasCompraDetalle = listasCompraDetalle;
+	}
     
 }

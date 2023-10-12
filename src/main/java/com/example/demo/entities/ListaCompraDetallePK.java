@@ -2,14 +2,14 @@ package com.example.demo.entities;
 
 public class ListaCompraDetallePK {
 	
-	  private long idListaCompra;
-	  private long codigoProducto;
+	  private Long idLista;
+	  private Long idProducto;
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (codigoProducto ^ (codigoProducto >>> 32));
-		result = prime * result + (int) (idListaCompra ^ (idListaCompra >>> 32));
+		result = prime * result + (int) (idProducto ^ (idProducto >>> 32));
+		result = prime * result + (int) (idLista ^ (idLista >>> 32));
 		return result;
 	}
 	@Override
@@ -21,23 +21,23 @@ public class ListaCompraDetallePK {
 		if (getClass() != obj.getClass())
 			return false;
 		ListaCompraDetallePK other = (ListaCompraDetallePK) obj;
-		if (codigoProducto != other.codigoProducto)
+		if (idProducto != other.idProducto)
 			return false;
-		if (idListaCompra != other.idListaCompra)
+		if (idLista != other.idLista)
 			return false;
 		return true;
 	}
-	public long getIdListaCompra() {
-		return idListaCompra;
+	public Long getIdLista() {
+		return idLista;
 	}
-	public void setIdListaCompra(long idListaCompra) {
-		this.idListaCompra = idListaCompra;
+	public void setIdLista(Long idLista) {
+		this.idLista = idLista;
 	}
-	public long getCodigoProducto() {
-		return codigoProducto;
+	public Long getIdProducto() {
+		return idProducto;
 	}
-	public void setCodigoProducto(long codigoProducto) {
-		this.codigoProducto = codigoProducto;
+	public void setIdProducto(Long idProducto) {
+		this.idProducto = idProducto;
 	}
 	  
 	  
