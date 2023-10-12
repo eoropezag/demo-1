@@ -4,16 +4,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.ListaCompra;
-import com.example.demo.repository.ListaComprasRepository;
+import com.example.demo.repository.ListaCompraRepository;
 
 import jakarta.transaction.Transactional;
 
 @Service
 @Transactional
-public class ListaComprasService {
+public class ListaCompraService {
 	
 	 @Autowired
-	 private ListaComprasRepository listaComprasRepository;
+	 private ListaCompraRepository listaComprasRepository;
 	 
 	 @Transactional
 		public ListaCompra crearLista(ListaCompra listaCompra) {

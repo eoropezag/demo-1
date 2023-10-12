@@ -8,7 +8,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -23,8 +22,8 @@ public class ListaCompra {
     private Long idLista;
 	
 	@ManyToOne
-    @JoinColumn(name="idCliente", nullable=false)
-	 private Long idCliente;
+    //@JoinColumn(name="idCliente", nullable=false)
+	 private Cliente cliente;
 
     @Column(name = "nombre")
     private String nombre;
@@ -49,12 +48,12 @@ public class ListaCompra {
 		this.idLista = idLista;
 	}
 
-	public Long getIdCliente() {
-		return idCliente;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setIdCliente(Long idCliente) {
-		this.idCliente = idCliente;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public String getNombre() {

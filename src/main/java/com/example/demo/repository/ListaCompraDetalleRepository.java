@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.demo.entities.ListaCompraDetalle;
 import com.example.demo.entities.ListaCompraDetallePK;
 
-public interface ListaComprasDetalleRepository  extends JpaRepository<ListaCompraDetalle, ListaCompraDetallePK>{
+public interface ListaCompraDetalleRepository  extends JpaRepository<ListaCompraDetalle, ListaCompraDetallePK>{
 
 }

@@ -16,31 +16,31 @@ public class ListaCompraDetalle {
     @Id
     @ManyToOne
     @JoinColumn(name="idLista", nullable=false)
-	 private Long idLista;
+	private ListaCompra listaCompra;
 	
     @Id
 	@ManyToOne
     @JoinColumn(name="idProducto", nullable=false)
-	 private Long idProducto;
+	 private Producto producto;
 
     @Column(name = "cantidad")
     private int cantidad;
 
-
-	public Long getIdLista() {
-		return idLista;
+    
+	public ListaCompra getListaCompra() {
+		return listaCompra;
 	}
 
-	public void setIdLista(Long idLista) {
-		this.idLista = idLista;
+	public void setListaCompra(ListaCompra listaCompra) {
+		this.listaCompra = listaCompra;
 	}
 
-	public Long getIdProducto() {
-		return idProducto;
+	public Producto getProducto() {
+		return producto;
 	}
 
-	public void setIdProducto(Long idProducto) {
-		this.idProducto = idProducto;
+	public void setProducto(Producto producto) {
+		this.producto = producto;
 	}
 
 	public int getCantidad() {
